@@ -1,0 +1,20 @@
+Here are some simple exercises to try to get a feel for language models:
+ 
+Training – First 1000 lines of http://www.gutenberg.org/cache/epub/23434/pg23434.txt
+Test – Second 1000 lines of the same url.
+ 
+Use the training data to compute unigram, bigram, and trigram language models. You need to segment sentences and tokenize. Insert the <s> and </s> symbols so you can compute probability of word sequences appropriately.
+ 
+1. Using MLE estimates find # of test sentences that get a non-zero probability according to unigram, bigram, and trigram models. 
+ 
+2. Make up five non-sensical word sequences drawing from the vocabulary of the training set. Find MLE estimates of these sentences. 
+ 
+3. Implement Add-1 smoothing. Compare MLE and Add-1 models on probabilities of high frequency unigrams, bigrams and trigrams. How much discounting is happening? 
+ 
+4. You can turn the language models into a language generator. A simple bot that will output random sentences. Always pick the start symbol first, then sample a word according to the LM probability (i.e. if unigram sample from P(w), if bigram sample from P(w|<s>). You can now use the new sampled word as the context and sample the next word according to the LM. Keep doing this until you've generated </s> symbol. 
+ 
+Generate sentences from unigram, bigram and trigram models. What do you observe? 
+ 
+5. Compute perplexity according to Add-1 model. Compute perplexity according to Add-delta, where delta = 0.001. How does perplexity change? 
+ 
+6. Sample some high frequency, mid-frequency and low-frequency words from the vocabulary (2 each). Compute the top 20 bigrams that begin with these sampled words. How do they look? What kind of knowledge are they capturing
